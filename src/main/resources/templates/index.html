@@ -2,9 +2,26 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}"/>
 <title>Insert title here</title>
 </head>
 <body>
-	<h1 th:text="'Best of the year by ' + ${ name }"></h1>
+	
+	<th:block th:replace="component/header :: header"></th:block>
+	
+	<main class="container">
+	
+	<h1 class="text-center mb-3" th:text="'Best of the year by '  + ${name} "></h1>
+	
+	<figure class="d-flex justify-content-center mb-3">
+		<img alt="img" th:src="">
+	</figure>
+	
+	<p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta eum esse in corporis facilis tempora quae perspiciatis cum earum rem enim, aperiam rerum illum sapiente officia praesentium deleniti similique! Vitae!
+    Asperiores, nisi dolorem! Ea, consequuntur ipsum! Id ratione quibusdam quasi neque rem voluptates reiciendis eos, harum repellendus modi blanditiis minus! Sapiente dignissimos expedita asperiores quidem minima culpa nostrum quasi accusamus.
+    Vitae reiciendis magni voluptatum dolores, necessitatibus maiores eos laboriosam eum porro possimus quas, dolor culpa molestiae debitis voluptate at inventore consequuntur minima quaerat cum alias aliquid obcaecati. Praesentium, deleniti ipsum?</p>
+	
+	</main>
+	
 </body>
 </html>

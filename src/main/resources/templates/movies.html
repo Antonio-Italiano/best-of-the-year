@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}"/>
+<title>Movies</title>
+</head>
+<body>
+	<th:block th:replace="component/header :: header"></th:block>
+		<main class="container">
+		<h1 class="mb-3 text-center">Movie:</h1>
+		<ul class="d-flex flex-column align-items-center">
+			<li th:each="movie: ${movies}"><th:block th:replace="component/listing :: listing('/movies/' + ${movie.id}, ${movie.title})"></th:block></li>
+		</ul>	
+	</main>
+</body>
+</html>

@@ -27,43 +27,21 @@ public class MainController {
 	@GetMapping("/movies")
 	public String getMovies(Model model) {
 		
-		String mts = "";
-		Iterator<Movie> it = getBestMovie().iterator();
-		while(it.hasNext()) {
-			
-			mts += it.next().getTitle();
-			
-			if (it.hasNext()) {
-				mts += ", ";
-			} else {
-				mts += ".";
-			}
-		}
+		List<Movie> movies = getBestMovie();
 		
-		model.addAttribute("titles", mts);
+		model.addAttribute("movies", movies);
 		
-		return "titles";
+		return "movies";
 	}
 	
 	@GetMapping("/songs")
 	public String getSongs(Model model) {
 		
-		String sts = "";
-		Iterator<Song> it = getBestSong().iterator();
-		while(it.hasNext()) {
-			
-			sts += it.next().getTitle();
-			
-			if (it.hasNext()) {
-				sts += ", ";
-			} else {
-				sts += ".";
-			}
-		}
+		List<Song> songs = getBestSong();
 		
-		model.addAttribute("titles", sts);
+		model.addAttribute("songs", songs);
 		
-		return "titles";
+		return "songs";
 	}
 	
 	@GetMapping("/movies/{id}")
